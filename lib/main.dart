@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:vision_proyecto/router/app_routes.dart';
+import 'package:vision_proyecto/screens/home_screen.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MaterialApp(
+  home: HomeScreen(),
+));
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -8,17 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Material App Bar'),
-        ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
-        ),
-      ),
+      initialRoute: AppRoutes.initialRoute,
+      routes: AppRoutes.getAppRoutes(),
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }
