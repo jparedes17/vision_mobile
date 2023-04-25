@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:vision_proyecto/providers/ui_provider.dart';
 import 'package:vision_proyecto/router/app_routes.dart';
-import 'package:vision_proyecto/screens/home_screen.dart';
+import 'package:vision_proyecto/theme/app.theme.dart';
 
-void main() => runApp(MaterialApp(
-  home: HomeScreen(),
-));
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Material App',
-      initialRoute: AppRoutes.initialRoute,
-      routes: AppRoutes.getAppRoutes(),
-      onGenerateRoute: AppRoutes.onGenerateRoute,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: ((context) => UiProvider()))
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: AppRoutes.initialRoute,
+        routes: AppRoutes.getAppRoutes(),
+        theme: Apptheme.lightTheme,
+      ),
     );
   }
 }
