@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:vision_proyecto/providers/ui_provider.dart';
 import 'package:vision_proyecto/router/app_routes.dart';
 import 'package:vision_proyecto/theme/app.theme.dart';
@@ -34,7 +36,7 @@ class Navbar extends StatelessWidget {
                 borderRadius: const BorderRadius.all(Radius.circular(30)),
                 child: Container(
                   padding: const EdgeInsets.only(left: 5),
-                  color: uiProvider.selectedMenuOpt == menu[index].position ? Colors.black : Colors.white,
+                  color: uiProvider.selectedMenuOpt == menu[index].position ? Colors.black : Colors.transparent,
                   child: ListTile(
                   minLeadingWidth: 10,
                   selectedColor: Apptheme.secundary,
@@ -50,8 +52,36 @@ class Navbar extends StatelessWidget {
               ),
             );
           },),
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                const Divider(height: 30),
+                const Text('Redes Sociales', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: Apptheme.secundary),),
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 50,vertical: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(onPressed: () => _launchUrl("https://www.facebook.com/visioncuc"), icon: const FaIcon(FontAwesomeIcons.facebook),),
+                      IconButton(onPressed: () => _launchUrl("https://www.instagram.com/visioncuc/"), icon: const FaIcon(FontAwesomeIcons.instagram)),
+                      IconButton(onPressed: () => _launchUrl("https://www.youtube.com/user/UniversidadCUC1970"), icon: const FaIcon(FontAwesomeIcons.youtube)),
+                      IconButton(onPressed: () => _launchUrl("https://www.linkedin.com/in/universidad-cuc-7433a048/"), icon: const FaIcon(FontAwesomeIcons.linkedin)),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          )
         ],
       ),
     );
+  }
+
+  Future<void> _launchUrl(String url) async {
+    if (!await launchUrl(Uri.parse(url),
+        mode: LaunchMode.externalApplication)) {
+      throw Exception('Could not launch $url');
+    }
   }
 }

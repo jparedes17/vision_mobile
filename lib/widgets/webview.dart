@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vision_proyecto/theme/app.theme.dart';
 import 'package:webview_flutter/webview_flutter.dart';
-// Import for Android features.
 import 'package:webview_flutter_android/webview_flutter_android.dart';
-// Import for iOS features.
 import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 
 class WebViewWidgetGlobal extends StatefulWidget {
@@ -55,11 +53,11 @@ class _WebViewWidgetGlobalState extends State<WebViewWidgetGlobal> {
                     "document.getElementsByTagName('footer')[0].style.display='none';");
               });
             }
-            Future.delayed(const Duration(milliseconds: 500), () {
+            
               setState(() {
                 isLoading = false;
               });
-            });
+            
           },
           onWebResourceError: (WebResourceError error) {},
           onNavigationRequest: (NavigationRequest request) {
@@ -68,7 +66,6 @@ class _WebViewWidgetGlobalState extends State<WebViewWidgetGlobal> {
             } else if (request.url.startsWith(
                 'https://visioncuc.com/wp-content/uploads/2023/04/Agenda-Programatica-Vision-2023_compressed.pdf')) {
               _launchUrl(request.url);
-              print(request.url);
               return NavigationDecision.prevent;
             } else {
               _launchUrl(request.url);
