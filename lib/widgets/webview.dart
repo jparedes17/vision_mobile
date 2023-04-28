@@ -63,10 +63,6 @@ class _WebViewWidgetGlobalState extends State<WebViewWidgetGlobal> {
           onNavigationRequest: (NavigationRequest request) {
             if (request.url.startsWith('https://visioncuc.com/')) {
               return NavigationDecision.navigate;
-            } else if (request.url.startsWith(
-                'https://visioncuc.com/wp-content/uploads/2023/04/Agenda-Programatica-Vision-2023_compressed.pdf')) {
-              _launchUrl(request.url);
-              return NavigationDecision.prevent;
             } else {
               _launchUrl(request.url);
               return NavigationDecision.prevent;
@@ -109,8 +105,9 @@ class _WebViewWidgetGlobalState extends State<WebViewWidgetGlobal> {
     ]);
   }
 
+
   Future<void> _launchUrl(String url) async {
-    if (!await launchUrl(Uri.parse(url),
+    if (!await launchUrl(Uri.parse(url), webViewConfiguration: WebViewConfiguration(enableJavaScript: true),
         mode: LaunchMode.externalApplication)) {
       throw Exception('Could not launch $widget.urlPage');
     }
