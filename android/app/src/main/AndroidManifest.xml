@@ -2,7 +2,7 @@
     package="com.example.vision_proyecto">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="vision_proyecto"
+        android:label="Visión CUC"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

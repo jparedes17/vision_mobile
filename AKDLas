@@ -1,0 +1,47 @@
+[33mcommit 5779c68728e92cd161186194757495b72103fc7c[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/develop-jorge[m[33m, [m[1;32mdevelop-jorge[m[33m)[m
+Author: Jorge Paredes <paredesjorge10@hotmail.com>
+Date:   Tue May 2 09:44:29 2023 -0500
+
+    Fix archivo info.plist para iOS
+
+[33mcommit 864afc690acca39a83a46e8c5f161a37dba2e869[m
+Author: Jorge Paredes <paredesjorge10@hotmail.com>
+Date:   Fri Apr 28 15:42:40 2023 -0500
+
+    Arreglar vista formulario en seccion inscripciones
+
+[33mcommit b52857710c39a5b47e27187b544d00966eedd25f[m
+Author: Jorge Paredes <paredesjorge10@hotmail.com>
+Date:   Fri Apr 28 15:41:30 2023 -0500
+
+    Mejora calidad animacion de inicio
+
+[33mcommit ee5ed94e9d646813a574e14f6a45821335c668b5[m
+Author: Jorge Paredes <paredesjorge10@hotmail.com>
+Date:   Fri Apr 28 13:17:23 2023 -0500
+
+    Añadido logo para IOS y Android de la app
+
+[33mcommit 1efd244eccbf7854566fa11b7d93248cc8ecafcd[m
+Author: Jorge Paredes <paredesjorge10@hotmail.com>
+Date:   Fri Apr 28 12:07:03 2023 -0500
+
+    Se arreglo calidad de logos, se agrego redes sociales en Drawer
+
+[33mcommit a967dbb909d82bf20b2a4164421c8e82829c0dc3[m
+Author: Jorge Paredes <paredesjorge10@hotmail.com>
+Date:   Tue Apr 25 17:18:51 2023 -0500
+
+    Creacion drawer con menu de opciones, configuracion webview con pagina web
+
+[33mcommit 34fd6ef0f3bd9edc64326178e2e13edc8ca8e4a9[m
+Author: Jorge Paredes <paredesjorge10@hotmail.com>
+Date:   Tue Apr 18 20:00:32 2023 -0500
+
+    Creacion del home y eliminacion del header y footer en el Webview
+
+[33mcommit 94f6f16adf6a30abf272032a680d5733ccaeb7e7[m
+Author: Jorge Paredes <paredesjorge10@hotmail.com>
+Date:   Tue Apr 18 09:50:12 2023 -0500
+
+    Inicio de proyecto
