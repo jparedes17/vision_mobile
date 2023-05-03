@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.vision_proyecto">
+    package="com.vision.cuc.flutter">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="Visión CUC"
