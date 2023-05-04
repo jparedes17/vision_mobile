@@ -61,11 +61,16 @@ class _WebViewWidgetGlobalState extends State<WebViewWidgetGlobal> {
           },
           onWebResourceError: (WebResourceError error) {},
           onNavigationRequest: (NavigationRequest request) {
-            if (request.url.startsWith('https://visioncuc.com/')) {
-              return NavigationDecision.navigate;
+            if (!request.url.contains("about:blank")) {
+              if (request.url.contains('visioncuc.com') ||
+                  request.url.contains('google')) {
+                return NavigationDecision.navigate;
+              } else {
+                _launchUrl(request.url);
+                return NavigationDecision.prevent;
+              }
             } else {
-              _launchUrl(request.url);
-              return NavigationDecision.prevent;
+              return NavigationDecision.navigate;
             }
           },
         ),

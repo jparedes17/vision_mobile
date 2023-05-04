@@ -30,23 +30,25 @@ class Navbar extends StatelessWidget {
           shrinkWrap: true,
           itemCount: menu.length,
           itemBuilder: (context, index) {
-            return Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-              child: ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(30)),
-                child: Container(
-                  padding: const EdgeInsets.only(left: 5),
-                  color: uiProvider.selectedMenuOpt == menu[index].position ? Colors.black : Colors.transparent,
-                  child: ListTile(
-                  minLeadingWidth: 10,
-                  selectedColor: Apptheme.secundary,
-                  selected: (uiProvider.selectedMenuOpt == menu[index].position),
-                  leading: Icon(menu[index].icon),
-                  title: Text(menu[index].name),
-                  onTap: () {
-                    uiProvider.selectedMenuOpt = menu[index].position;
-                    Navigator.of(context).pop();
-                  },
+            return SingleChildScrollView(
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.all(Radius.circular(30)),
+                  child: Container(
+                    padding: const EdgeInsets.only(left: 5),
+                    color: uiProvider.selectedMenuOpt == menu[index].position ? Colors.black : Colors.transparent,
+                    child: ListTile(
+                    minLeadingWidth: 10,
+                    selectedColor: Apptheme.secundary,
+                    selected: (uiProvider.selectedMenuOpt == menu[index].position),
+                    leading: Icon(menu[index].icon),
+                    title: Text(menu[index].name),
+                    onTap: () {
+                      uiProvider.selectedMenuOpt = menu[index].position;
+                      Navigator.of(context).pop();
+                    },
+                    ),
                   ),
                 ),
               ),
